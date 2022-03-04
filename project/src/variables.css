@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;500;700;900&display=swap');
+:root{
+    /* STANDART COLORUS*/
+    --color-subtitle: #aaa;   /* цвет для текста дополнительного ( колл просмотров + дата + название канала под видео ) */
+    --color-dark-items: #030303;  /* цвет для темного фоно кнопок + основной темный текст */
+    --background-nav: #fffffffa;
+    --background-main: #f9f9f9;
+    /* CATEGORY BUTTONS*/
+    --category-buttons-border-radius-: 16px;
+    --category-buttons-border-width: 1px;
+    --category-buttons-border-color: #0000001a;
+    --category-buttons-padding-buttons-height: 32px;
+    --category-buttons-padding: 0 10px;
+    /* SEARCH FIELD*/
+    --search-box-background: var(--background-main);
+    --search-box-text-color: var(--color-dark-items);
+    /*  FONT_SIZE*/
+    --font-size-headline-videos-small: 1.4rem;
+    --font-size-headline-videos-large: 2.3rem;
+    --font-size-subtitle-videos-small: 2.3rem;
+    --font-size-subtitle-videos-large: 1.2rem;
+    --font-size-comments-text: 1.4rem;
+
+}
+.dark-theme-variables{
+    --color-title: #ff;
+    --color-dark-items: #fff;
+    --background-main: #181818;
+    --background-nav: #202020;
+    --search-box-background: #121212;
+    --category-buttons-default-background: #ffffff1a;
+
+}
+
