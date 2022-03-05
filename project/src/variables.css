@@ -3,17 +3,25 @@
     /* STANDART COLORUS*/
     --color-subtitle: #aaa;   /* цвет для текста дополнительного ( колл просмотров + дата + название канала под видео ) */
     --color-dark-items: #030303;  /* цвет для темного фоно кнопок + основной темный текст */
-    --background-nav: #fffffffa;
-    --background-main: #f9f9f9;
+    --background-nav: #fffffffa; /* Цвет для верхнего и бокового блока */
+    --background-main: #f9f9f9;  /* Цвет для основного сектора */
+    --color-background-buttons: #e3e3e3;
+    --background-hover-nav-links: rgba(231, 231, 231, 0.55);
+    --background-active-nav-links: rgba(219, 219, 219, 0.72);
+    --color-icons-lighted-dark: #3d3b3b;
+    /*===========TRANSITION==============*/
+    --transition: all .3s ease;
     /* CATEGORY BUTTONS*/
     --category-buttons-border-radius-: 16px;
     --category-buttons-border-width: 1px;
-    --category-buttons-border-color: #0000001a;
+    --category-buttons-border-color: rgba(147, 147, 147, 0.1);
     --category-buttons-padding-buttons-height: 32px;
     --category-buttons-padding: 0 10px;
+    --category-buttons-default-background: rgba(170, 168, 168, 0.1);
     /* SEARCH FIELD*/
     --search-box-background: var(--background-main);
     --search-box-text-color: var(--color-dark-items);
+    --search-box-border-color: #dedada;
     /*  FONT_SIZE*/
     --font-size-headline-videos-small: 1.4rem;
     --font-size-headline-videos-large: 2.3rem;
@@ -21,14 +29,25 @@
     --font-size-subtitle-videos-large: 1.2rem;
     --font-size-comments-text: 1.4rem;
 
+    /*   PHOTO SIZING */
+    --small-photo-sizing-width: 33px;
+    --small-photo-sizing-height: 33px;
+
+
 }
 .dark-theme-variables{
-    --color-title: #ff;
+    --category-buttons-default-background: #ffffff1a;
+    --background-hover-nav-links: #444343;
+    --background-active-nav-links: #373737;
+    --color-icons-lighted-dark: #c4c1c1;
+    --search-box-border-color: #404040;
     --color-dark-items: #fff;
     --background-main: #181818;
     --background-nav: #202020;
     --search-box-background: #121212;
-    --category-buttons-default-background: #ffffff1a;
+    --color-background-buttons: #575454;
+
+
 
 }
 
