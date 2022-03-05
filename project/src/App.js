@@ -1,15 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Header from "@components/Header";
 import "./variables.css"
 import "./index.css"
 import Sidebar from "@components/Sidebar";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import HomesScreen from "@components/HomeScreen";
+import Login from "@components/Login";
+import {useSelector} from "react-redux";
+
+
+// NOT FOR THE DETAIL VIEW SCREEN
 
 const Layout = ({children}) =>{
 
     const [sideBar,toggleSideBar] = useState(false)
-    const [marginNo,setMarginNo] = useState()
     const handleToggle = () =>{
         toggleSideBar( val => !val )
     }
@@ -30,8 +34,14 @@ const Layout = ({children}) =>{
 }
 
 const App = () => {
+
+    const history = useNavigate()
+    const { accessToken, loading } = useSelector( state => state.authReducer)
+    useEffect(()=>{
+        if (!loading && !accessToken) history("/auth")
+    },[history,loading,accessToken])
+
     return(
-        <BrowserRouter>
             <Routes>
                 <Route path="/" exact element = {
                     <Layout>
@@ -40,7 +50,7 @@ const App = () => {
                 }>
                 </Route>
                 <Route path="/auth" element = {
-                    <div>Login Screen</div>
+                    <Login/>
                 }>
                 </Route>
                 <Route path="/search" element = {
@@ -52,7 +62,6 @@ const App = () => {
                 <Route path="*" element = {<Navigate to = "/" replace/>}>
                 </Route>
             </Routes>
-        </BrowserRouter>
     )
 }
 export default App;

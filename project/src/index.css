@@ -18,6 +18,11 @@ html{
     margin-top:56px;
     width: 100%;
 }
+/*@media screen and (min-width: 521px) and (max-width: 952px) {*/
+/*    main{*/
+/*        padding-right: 90px;*/
+/*    }*/
+/*}*/
 
 @media screen and (max-width: 520px){
     .main{
@@ -64,6 +69,7 @@ h5{
 }
 small{
     font-size: var(--font-size-subtitle-videos-small);
+    color: var(--color-subtitle)
 }
 large{
     font-size: var(--font-size-subtitle-videos-large);
