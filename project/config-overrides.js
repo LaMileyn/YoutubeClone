@@ -6,7 +6,9 @@ module.exports = function override(config,env){
         "@components" : 'src/components',
         "@redux" : "src/redux",
         "@files" : "src/files/",
-        "@firebase_auth" : "src/firebase"
+        "@firebase_auth" : "src/firebase",
+        "@api" : "src/api",
+        "@skeletones" : 'src/helpers/skeletones/'
 
     })(config);
     return config;

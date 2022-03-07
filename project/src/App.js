@@ -25,7 +25,7 @@ const Layout = ({children}) =>{
                 sideBar = {sideBar}
                 handleToggle = {handleToggle}
                 />
-                <main className="main" style={  sideBar ? {marginLeft: '230px'} : {marginLeft: '90px'}  }>
+                <main className="main" >
                     {children}
                 </main>
             </div>
