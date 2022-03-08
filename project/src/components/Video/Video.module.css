@@ -1,0 +1,68 @@
+.picture{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    height: 194px;
+
+}
+.time_to_watch{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3px 8px;
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    color: #fff;
+    border-radius: 3px;
+
+}
+.picture img{
+    width: 100%;
+    /*object-fit: contain;*/
+    height: 100%;
+}
+.video_container{
+    display: flex;
+    flex-direction: column;
+}
+.about{
+    display: flex;
+    gap: 1rem;
+    padding-top: .7rem;
+    /*align-items: center;*/
+}
+.photo_author{
+    width: var(--small-photo-sizing-width);
+    height: var(--small-photo-sizing-height);
+}
+.photo_author img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.video_title{
+    margin-bottom: .5rem;
+    font-weight: 500;
+}
+.about_right > small{
+    display: block;
+}
+.watches_and_time{
+    margin-top: 5px;
+}
+
+/*=========MEDIA QUERYS==================*/
+
+@media screen and (max-width: 1070px) {
+    .picture{
+        height: 157px ;
+    }
+}
+@media screen and (max-width: 1070px) {
+    .picture{
+        height: 197px ;
+    }
+}@media screen and (max-width: 600px) {
+    .picture{
+        height: 250px ;
+    }
+}
