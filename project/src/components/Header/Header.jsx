@@ -2,7 +2,11 @@ import React from "react";
 import s from './header.module.css'
 import Youtube from '@files/icons/youtube.png'
 import profile from "@files/photos/photo1.jpg"
+import {useSelector} from "react-redux";
 const Header = (props) => {
+
+    const photo = useSelector( state => state.authReducer.user?.photoURL)
+
     return (
         <>
             <header>
@@ -49,7 +53,12 @@ const Header = (props) => {
                             </div>
                             <div className={s.profile}>
                                 <div className={s.photo}>
-                                    <img src={profile} alt=""/>
+                                    {
+                                        photo
+                                            ? <img src={photo} alt=""/>
+                                            :  <img src={profile} alt=""/>
+                                    }
+
                                 </div>
                             </div>
                         </div>

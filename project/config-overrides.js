@@ -8,7 +8,8 @@ module.exports = function override(config,env){
         "@files" : "src/files/",
         "@firebase_auth" : "src/firebase",
         "@api" : "src/api",
-        "@skeletones" : 'src/helpers/skeletones/'
+        "@skeletones" : 'src/helpers/skeletones',
+        "@screens" : "src/Screens"
 
     })(config);
     return config;

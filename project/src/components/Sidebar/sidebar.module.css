@@ -1,9 +1,9 @@
 aside{
-    height: 92.2vh;
+    height: 94vh;
     z-index: 3;
     background: var(--background-nav);
     position: sticky;
-    top: 7.8vh;
+    top: 6vh;
     width: 90px;
 }
 .nav{

@@ -10,20 +10,16 @@
 }
 .container{
     display: flex;
-    margin-top: 56px;
+    top: 6vh;
+    position: absolute;
+    width: 100%;
 }
 html{
     font-size: 14px;
 }
 .main{
-    /*margin-top:56px;*/
     width: 100%;
 }
-/*@media screen and (min-width: 521px) and (max-width: 952px) {*/
-/*    main{*/
-/*        padding-right: 90px;*/
-/*    }*/
-/*}*/
 
 @media screen and (max-width: 870px){
     .main{
@@ -74,6 +70,7 @@ small{
 }
 large{
     font-size: var(--font-size-subtitle-videos-large);
+    color: var(--color-subtitle)
 }
 .profile-photo{
     width: 2.8rem;

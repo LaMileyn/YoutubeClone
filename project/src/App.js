@@ -4,9 +4,10 @@ import "./variables.css"
 import "./index.css"
 import Sidebar from "@components/Sidebar";
 import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
-import HomesScreen from "@components/HomeScreen";
-import Login from "@components/Login";
+import HomesScreen from "@screens/HomeScreen";
+import Login from "@screens/Login";
 import {useSelector} from "react-redux";
+import VideoWatchScreen from "./Screens/VideoWatchScreen";
 
 
 // NOT FOR THE DETAIL VIEW SCREEN
@@ -56,6 +57,12 @@ const App = () => {
                 <Route path="/search" element = {
                     <Layout>
                         <div><h1>Search results</h1></div>
+                    </Layout>
+                }>
+                </Route>
+                <Route path="/watch/:id" element = {
+                    <Layout>
+                    <VideoWatchScreen />
                     </Layout>
                 }>
                 </Route>

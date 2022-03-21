@@ -1,22 +1,31 @@
 import {
+    CHANNEL_DETAILS_FAIL, CHANNEL_DETAILS_REQUEST, CHANNEL_DETAILS_SUCCESS,
     HOME_VIDEOS_FAIL,
     HOME_VIDEOS_REQUEST, HOME_VIDEOS_SUCCESS,
     LOAD_PROFILE,
     LOG_OUT,
     LOGIN_FAIL,
     LOGIN_REQUEST,
-    LOGIN_SUCCESS
+    LOGIN_SUCCESS, SUBSCRIBE_STATUS_CHECK, VIDEO_SELECTED_FAIl, VIDEO_SELECTED_REQUEST, VIDEO_SELECTED_SUCCESS
 } from "../action_types/action.type";
 import firebase from "firebase/compat/app";
-// import auth from "@firebase_auth/firebase.js"
 import auth from "@firebase_auth/firebase"
 import {
+    channelDetailsFailAction,
+    channelDetailsRequestAction,
+    channelDetailsSuccessAction,
     homeVideosFailAction,
-    homeVideosRequestAction, homeVideosSuccessAction,
+    homeVideosRequestAction,
+    homeVideosSuccessAction,
     loadProfileAction,
     loginFailAction,
     loginRequestAction,
-    loginSuccessAction, logoutAction
+    loginSuccessAction,
+    logoutAction,
+    selectedVideoFailAction,
+    selectedVideoRequestAction,
+    selectedVideoSuccessAction,
+    StatusCheckAction
 } from "../action_creators/action..creators";
 import {request} from "../../api/axios.instance";
 
@@ -78,7 +87,6 @@ export const  getPopularVideos = () => async (dispatch,getState) =>{
                 pageToken : getState().homeVideosReducer.nextPageToken
             }
         })
-        // console.log(res)
         dispatch(homeVideosSuccessAction({
             type : HOME_VIDEOS_SUCCESS,
             payload : {
@@ -96,7 +104,6 @@ export const  getPopularVideos = () => async (dispatch,getState) =>{
     }
 }
 //YOUTUBE CATEGORY VIDEO
-
 export const getPopularVideosByCategory = (keyword) => async (dispatch,getState) =>{
     try{
         dispatch(homeVideosRequestAction({
@@ -111,7 +118,6 @@ export const getPopularVideosByCategory = (keyword) => async (dispatch,getState)
                 type : "video"
             }
         })
-        console.log(res)
         dispatch(homeVideosSuccessAction({
             type : HOME_VIDEOS_SUCCESS,
             payload : {
@@ -128,3 +134,73 @@ export const getPopularVideosByCategory = (keyword) => async (dispatch,getState)
         }))
     }
 }
+//YOUTUBE SELECTED VIDEO
+export const getSelectedVideoById = id => async dispatch =>{
+    try{
+        dispatch(selectedVideoRequestAction({
+            type : VIDEO_SELECTED_REQUEST
+        }))
+        const { data }  = await request('/videos',{
+            params : {
+                part : 'snippet,statistics',
+                id
+            }
+        })
+        dispatch(selectedVideoSuccessAction({
+            type: VIDEO_SELECTED_SUCCESS,
+            payload : data.items[0]
+        }))
+    }catch(error){
+        dispatch(selectedVideoFailAction({
+            type : VIDEO_SELECTED_FAIl,
+            payload : error.message
+        }))
+    }
+}
+
+export const getChannelDetails = id => async dispatch =>{
+    try{
+        dispatch(channelDetailsRequestAction({
+            type : CHANNEL_DETAILS_REQUEST
+        }))
+        const { data }  = await request('/channels',{
+            params : {
+                part : 'snippet,statistics,contentDetails',
+                id
+            }
+        })
+        dispatch(channelDetailsSuccessAction({
+            type: CHANNEL_DETAILS_SUCCESS,
+            payload : data.items[0]
+        }))
+    }catch(error){
+        dispatch(channelDetailsFailAction({
+            type : CHANNEL_DETAILS_FAIL,
+            payload : error.message
+        }))
+    }
+}
+
+export const getSubsribeStatus = id => async (dispatch,getState) =>{
+    try{
+        const { data }  = await request('/subscriptions',{
+            params : {
+                part : 'snippet',
+                forChannelId : id,
+                mine : true
+            },
+            headers : {
+                Authorization : `Bearer ${getState().authReducer.accessToken}`
+            }
+        })
+        dispatch(StatusCheckAction({
+            type : SUBSCRIBE_STATUS_CHECK,
+            payload : data.items.length !== 0
+        }))
+    }catch(error){
+        console.log(error.message)
+    }
+}
+
+
+

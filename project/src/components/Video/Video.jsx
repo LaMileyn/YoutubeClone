@@ -6,6 +6,7 @@ import moment from "moment";
 import numeral from 'numeral'
 import Skelletone from "../../helpers/skeletones/skeletones";
 import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 
 const Video = ({video}) => {
@@ -41,14 +42,17 @@ const Video = ({video}) => {
         setChannelIcon(items[0].snippet.thumbnails.default)
 
     }, [channelId])
-
+    const history = useNavigate()
+    const handleClick = () =>{
+        history(`/watch/${_videoId}`)
+    }
     return (
         <>
             {
                 loading
                     ? <Skelletone type={'hello'}/>
                     : (
-                        <div className={s.video_container}>
+                        <div className={s.video_container} onClick={handleClick} >
                             <div className={s.picture}>
                                 <img src={medium.url} alt=""/>
                                 <div className={s.time_to_watch}>{_duration}</div>

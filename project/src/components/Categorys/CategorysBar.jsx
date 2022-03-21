@@ -5,11 +5,11 @@ import {getPopularVideos, getPopularVideosByCategory} from "../../redux/thunks/t
 
 const CategorysBar = () => {
     const [value, setValue] = useState("All")
-    const categorys = ["All", "React js", "Angular js", "React Native", "use of API", "Redux", "Misux", "Alogithm Art", "Guitar"]
+    const categorys = ["All", "React js", "Angular js", "React Native", "use of API", "Redux", "Music", "Algorithm Art", "Guitar"]
     const dispatch = useDispatch()
     const categoryHandler = valueCurr => {
         setValue(valueCurr);
-        if (value === "All") {
+        if (valueCurr === "All") {
             dispatch(getPopularVideos())
         } else {
             dispatch(getPopularVideosByCategory(valueCurr))

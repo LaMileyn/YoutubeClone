@@ -7,32 +7,32 @@
 .videolist{
     display: grid;
     gap: 1.3rem;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
     justify-content: center;
     row-gap: 2.3rem;
 
 }
 /*===========MEDIA QUIERYS===================*/
 
-@media screen and (max-width: 1500px) {
-    .videolist{
-        grid-template-columns: repeat(4,1fr);
-    }
-}
+/*@media screen and (max-width: 1500px) {*/
+/*    .videolist{*/
+/*        grid-template-columns: repeat(4,1fr);*/
+/*    }*/
+/*}*/
 
 
-@media screen and (max-width: 1270px) {
-    .videolist{
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-@media screen and (max-width: 950px) {
-    .videolist{
-        grid-template-columns: repeat(2,1fr);
-    }
-}
-@media screen and (max-width: 600px) {
-    .videolist{
-        grid-template-columns: repeat(1,1fr);
-    }
-}
+/*@media screen and (max-width: 1270px) {*/
+/*    .videolist{*/
+/*        grid-template-columns: repeat(3,1fr);*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 950px) {*/
+/*    .videolist{*/
+/*        grid-template-columns: repeat(2,1fr);*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 600px) {*/
+/*    .videolist{*/
+/*        grid-template-columns: repeat(1,1fr);*/
+/*    }*/
+/*}*/

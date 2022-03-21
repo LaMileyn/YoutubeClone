@@ -1,7 +1,7 @@
 import {LOAD_PROFILE, LOG_OUT, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS} from "../action_types/action.type";
 
 const initialState = {
-    user: sessionStorage.getItem('ytc-profice')? JSON.parse(sessionStorage.getItem('ytc-access-token')) : null,
+    user: sessionStorage.getItem('ytc-profile')? JSON.parse(sessionStorage.getItem('ytc-profile')) : null,
     loading: false,
     accessToken: sessionStorage.getItem('ytc-access-token')? sessionStorage.getItem('ytc-access-token') : null
 }
