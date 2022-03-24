@@ -15,7 +15,6 @@ const Video = ({video}) => {
     const [views, setViews] = useState(null)
     const [duration, setDuration] = useState(null)
     const [channelIcon, setChannelIcon] = useState(null)
-
     const seconds = moment.duration(duration).asSeconds()
     const _duration = moment.utc(seconds * 1000).format("mm:ss")
     const _videoId = id?.videoId || id
@@ -49,8 +48,8 @@ const Video = ({video}) => {
     return (
         <>
             {
-                loading
-                    ? <Skelletone type={'hello'}/>
+                ( loading )
+                    ?  <Skelletone type={'hello'}/>
                     : (
                         <div className={s.video_container} onClick={handleClick} >
                             <div className={s.picture}>

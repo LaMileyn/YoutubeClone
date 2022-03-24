@@ -54,3 +54,30 @@ export const channelDetailsFailAction = ( { type, payload } ) =>{
 export const StatusCheckAction  = ( {type,payload}) =>{
     return { type, payload }
 }
+// YOTUBE COMMENTS
+export const commentsRequestAction = ( { type }) =>{
+    return { type }
+}
+export const commentsSuccessAction = ( { type ,payload }) =>{
+    return { type, payload }
+}
+export const commentsFailAction = ( { type, payload } ) =>{
+    return { type, payload }
+}
+export const createCommentSuccessAction = ( { type,payload } ) =>{
+    return { type, payload }
+}
+export const createCommentFailAction = ( { type, payload } ) =>{
+    return { type, payload }
+}
+// YOTUBE RELATED VIDEOS
+
+export const relatedVideosRequestAction = ( { type } ) =>{
+    return { type }
+}
+export const relatedVideosSuccessAction = ( { type, payload } ) =>{
+    return { type, payload }
+}
+export const relatedVideosFailAction = ( { type, payload } ) =>{
+    return { type, payload }
+}

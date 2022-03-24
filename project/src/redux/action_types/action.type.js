@@ -23,3 +23,16 @@ export const CHANNEL_DETAILS_FAIL = "CHANNEL_DETAILS_FAIL"
 export const SUBSCRIBE_STATUS_CHECK = "SUBSCRIBE_STATUS_CHECK"
 
 //================================================
+
+export const COMMENTS_REQUEST = "COMMENTS_REQUEST"
+export const COMMENTS_SUCCESS = "COMMENTS_SUCCESS"
+export const COMMENTS_FAIL = "COMMENTS_FAIL"
+
+export const CREATE_COMMENTS_SUCCESS = "CREATE_COMMENTS_SUCCESS"
+export const CREATE_COMMENTS_FAIL = "CREATE_COMMENTS_FAIL"
+
+//================================================
+
+export const RELATED_VIDEOS_REQUEST = "RELATED_VIDEOS_REQUEST"
+export const RELATED_VIDEOS_SUCCESS = "RELATED_VIDEOS_SUCCESS"
+export const RELATED_VIDEOS_FAIL = "RELATED_VIDEOS_FAIL"
