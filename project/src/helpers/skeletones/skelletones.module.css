@@ -1,3 +1,4 @@
+/*===============HOME SCREEEN SKELLETONES VIDEOS========================*/
 .video_containerHomeScreen{
     display: flex;
     flex-direction: column;
@@ -59,4 +60,150 @@
         width: 100%;
         padding: 0 25px;
     }
+}
+
+/*==================INLINE VIDEOS SKELLETONES =====================*/
+
+.videoInlineContainer{
+    animation: skeleton .5s ease infinite alternate;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 15px;
+}
+.videoInlineLeft{
+    height: 98px;
+    width: 168px;
+    background-color: var(--background-nav);
+}
+.videoInlineRight{
+    flex: 1;
+}
+.rightInlineUp{
+    height: 20px;
+    background-color: var(--background-nav);
+    margin-bottom: 7px;
+}
+.rightInlineBottom{
+    height: 8px;
+    background-color: var(--background-nav);
+    width: 30%;
+}
+
+
+/*=============================VIDEO DESCRITPION SKELLETONES=====================================*/
+.containerInformationVideo{
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--background-active-nav-links);
+    animation: skeleton .5s ease infinite alternate;
+}
+.top{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--background-active-nav-links);
+}
+.titleInformationVideo{
+    width: 60%;
+    height: 20px;
+    background-color: var(--background-nav);
+}
+.viewAndDateInformationVideo{
+    height: 11px;
+    width: 30%;
+    background-color: var(--background-nav);
+    margin-top: .5rem;
+}
+.bottom{
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+.bottomWithoutDescriptionInformationVideo{
+    display: flex;
+    align-items: center;
+}
+.avaAndNameInformationVideo{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.avaInformationVideo{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--background-nav);
+}
+.channelPersonInformationVideo{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.channelNameInformationVideo{
+    height: 12px;
+    width: 90px;
+    background-color: var(--background-nav);
+}
+.channelSubscribeerInformationVideo{
+    height: 8px;
+    width: 50px;
+    background-color: var(--background-nav);
+}
+.describtionInformationVideo1{
+    width: 100%;
+    margin-top: 15px;
+    height: 10px;
+    background-color: var(--background-nav);
+}
+.describtionInformationVideo2{
+    width: 100%;
+    margin-top: 5px;
+    height: 10px;
+    background-color: var(--background-nav);
+}
+.describtionInformationVideo3{
+    width: 30%;
+    margin-top: 5px;
+    height: 10px;
+    background-color: var(--background-nav);
+}
+/*=======================================COMMENTS SKELLETONES=========================================================*/
+
+.containerComments{
+    margin-top: 2.5rem;
+    animation: skeleton .5s ease infinite alternate;
+}
+.numberOfComments{
+    width: 100px;
+    height: 15px;
+    background-color: var(--background-nav);
+    margin-bottom: 25px;
+}
+.comment{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 15px;
+}
+
+.commentAva{
+    width: 45px;
+    height: 45px;
+    background-color: var(--background-nav);
+    border-radius: 50%;
+}
+.commentAbout{
+    flex: 1;
+}
+.commentName{
+    width: 100px;
+    height: 10px;
+    background-color: var(--background-nav);
+}
+.commentText1{
+    width: 100%;
+    margin-top: 10px;
+    height: 10px;
+    background-color: var(--background-nav);
+}
+.commentText2{
+    margin-top: 5px;
+    width: 70%;
+    height: 10px;
+    background-color: var(--background-nav);
 }

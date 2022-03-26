@@ -4,6 +4,7 @@ import Video from "@components/Video";
 import {useDispatch, useSelector} from "react-redux";
 import {getPopularVideos, getPopularVideosByCategory} from "../../redux/thunks/thunks";
 import {flushSync} from "react-dom";
+import Skelletone from "../../helpers/skeletones/skeletones";
 
 const VideosCategory = () => {
     const dispatch = useDispatch();
@@ -41,14 +42,24 @@ const VideosCategory = () => {
         return () => document.removeEventListener('scroll', scrollFunc)
     }, [])
 
+
     return (
         <>
             <div className={s.container_videos}>
                 <ul className={s.videolist}>
                     {
-                        videos && videos.map( (video,index) => (
-                            <Video key={index} video={video} totalCount={totalCount}/>
-                        ))
+                        loading
+                            ?
+                            (
+                               [...Array(20)].map( el => <Skelletone type={"home"}/>)
+                            )
+                            :
+                            (
+                                videos.map( (video,index) => (
+                                    <Video key={index} video={video} totalCount={totalCount}/>
+                                ))
+                            )
+
                     }
                 </ul>
             </div>

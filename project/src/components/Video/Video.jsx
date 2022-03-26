@@ -47,10 +47,6 @@ const Video = ({video}) => {
     }
     return (
         <>
-            {
-                ( loading )
-                    ?  <Skelletone type={'hello'}/>
-                    : (
                         <div className={s.video_container} onClick={handleClick} >
                             <div className={s.picture}>
                                 <img src={medium.url} alt=""/>
@@ -72,9 +68,6 @@ const Video = ({video}) => {
                                 </div>
                             </div>
                         </div>
-                    )
-            }
-
         </>
     )
 }
