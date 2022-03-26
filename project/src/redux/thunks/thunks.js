@@ -4,7 +4,9 @@ import {
     CHANNEL_DETAILS_SUCCESS,
     COMMENTS_FAIL,
     COMMENTS_REQUEST,
-    COMMENTS_SUCCESS, CREATE_COMMENTS_FAIL, CREATE_COMMENTS_SUCCESS,
+    COMMENTS_SUCCESS,
+    CREATE_COMMENTS_FAIL,
+    CREATE_COMMENTS_SUCCESS,
     HOME_VIDEOS_FAIL,
     HOME_VIDEOS_REQUEST,
     HOME_VIDEOS_SUCCESS,
@@ -12,7 +14,12 @@ import {
     LOG_OUT,
     LOGIN_FAIL,
     LOGIN_REQUEST,
-    LOGIN_SUCCESS, RELATED_VIDEOS_FAIL, RELATED_VIDEOS_REQUEST, RELATED_VIDEOS_SUCCESS,
+    LOGIN_SUCCESS,
+    RELATED_VIDEOS_FAIL,
+    RELATED_VIDEOS_REQUEST,
+    RELATED_VIDEOS_SUCCESS, SEARCH_VIDEOS_FAIL,
+    SEARCH_VIDEOS_REQUEST,
+    SEARCH_VIDEOS_SUCCESS,
     SUBSCRIBE_STATUS_CHECK,
     VIDEO_SELECTED_FAIl,
     VIDEO_SELECTED_REQUEST,
@@ -38,7 +45,7 @@ import {
     logoutAction, relatedVideosFailAction, relatedVideosRequestAction, relatedVideosSuccessAction,
     selectedVideoFailAction,
     selectedVideoRequestAction,
-    selectedVideoSuccessAction,
+    selectedVideoSuccessAction, serchVideosFailAction, serchVideosSuccessAction,
     StatusCheckAction
 } from "../action_creators/action..creators";
 import {request} from "../../api/axios.instance";
@@ -54,13 +61,14 @@ export const login = () => async dispatch => {
         const res = await auth.signInWithPopup(provider)
         const accessToken = res.credential.accessToken
         const profile = {
-            name : res.additionalUserInfo.profile.displayName,
+            name : res.additionalUserInfo.profile.name,
             photoURL : res.additionalUserInfo.profile.picture
         }
         dispatch(loginSuccessAction({
             type : LOGIN_SUCCESS,
             payload : accessToken
         }))
+        console.log(res)
         // DATA TO SESSION STORAGE
         sessionStorage.setItem('ytc-access-token',accessToken)
         sessionStorage.setItem('ytc-profile',JSON.stringify(profile))
@@ -291,4 +299,31 @@ export const getRelatedVideos = id => async dispatch =>{
         dispatch(relatedVideosFailAction({type : RELATED_VIDEOS_FAIL, payload : e.message }))
     }
 
+}
+// YOTUBE SEARCH VIDEOS
+
+export const getVideosBySearch = (keyword) => async (dispatch ) =>{
+    try{
+        dispatch(serchVideosSuccessAction({
+            type : SEARCH_VIDEOS_REQUEST
+        }))
+        const { data } = await request("/search",{
+            params : {
+                part : "snippet",
+                maxResults : 20,
+                q : keyword,
+                type : "video,channel"
+            }
+        })
+        console.log(data)
+        dispatch(serchVideosSuccessAction({
+            type : SEARCH_VIDEOS_SUCCESS,
+            payload : data.items
+        }))
+    }catch (e){
+        dispatch(serchVideosFailAction({
+            type : SEARCH_VIDEOS_FAIL,
+            payload : e.message
+        }))
+    }
 }

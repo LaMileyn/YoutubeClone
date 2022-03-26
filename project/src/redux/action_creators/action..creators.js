@@ -81,3 +81,13 @@ export const relatedVideosSuccessAction = ( { type, payload } ) =>{
 export const relatedVideosFailAction = ( { type, payload } ) =>{
     return { type, payload }
 }
+// YOTUBE SEARCH VIDEOS
+export const serchVideosRequestAction = ( { type } ) =>{
+    return { type }
+}
+export const serchVideosSuccessAction = ( { type, payload } ) =>{
+    return { type, payload }
+}
+export const serchVideosFailAction = ( { type, payload } ) =>{
+    return { type, payload }
+}

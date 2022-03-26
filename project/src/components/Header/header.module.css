@@ -120,13 +120,73 @@ header{
 .photo{
     width: var(--small-photo-sizing-width);
     height: var(--small-photo-sizing-height);
+    position: relative;
 
 }
 .photo img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    cursor: pointer;
 }
+
+/*============CHANGE THEME ========================*/
+.theme{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    transition: all 300ms ease;
+    padding: 15px;
+}
+.theme:hover{
+    background: var(--background-hover-nav-links);;
+}
+.theme > span:last-child{
+    display: flex;
+    gap: .3rem;
+
+}
+
+.menu{
+    position: absolute;
+    right: 50px;
+    background: var(--background-nav);
+    /*padding: 0 55px;*/
+    height: 450px;
+    width: 240px;
+    top: 4vh;
+}
+.menu_profile{
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--background-active-nav-links);
+}
+.menu_profile_left{
+    width: 45px;
+    height: 45px;
+}
+.menu_profile_right{
+    flex: 1;
+}
+.menu_profile_left img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.switch_theme .title{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    padding: 15px 0 1rem 15px;
+    border-bottom: 1px solid var(--background-active-nav-links);
+}
+
 
 
 /*===========MEDIA QUIERIS============*/

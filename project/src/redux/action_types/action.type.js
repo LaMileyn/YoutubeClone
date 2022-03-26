@@ -36,3 +36,11 @@ export const CREATE_COMMENTS_FAIL = "CREATE_COMMENTS_FAIL"
 export const RELATED_VIDEOS_REQUEST = "RELATED_VIDEOS_REQUEST"
 export const RELATED_VIDEOS_SUCCESS = "RELATED_VIDEOS_SUCCESS"
 export const RELATED_VIDEOS_FAIL = "RELATED_VIDEOS_FAIL"
+
+//================================================
+
+export const SEARCH_VIDEOS_REQUEST = "SEARCH_VIDEOS_REQUEST"
+export const SEARCH_VIDEOS_SUCCESS = "SEARCH_VIDEOS_SUCCESS"
+export const SEARCH_VIDEOS_FAIL = "SEARCH_VIDEOS_FAIL"
+
+//=================================================

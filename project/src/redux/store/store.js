@@ -7,6 +7,7 @@ import {SelectedVideoReducer} from "@redux/reducers/selectedVideoReducer";
 import {channelDetailsReducer} from "@redux/reducers/channelDetailsReducer";
 import {CommentsReducer} from "@redux/reducers/CommentsReducer";
 import {relatedVideosReducer} from "@redux/reducers/relatedVideosReducer";
+import {SearchVideosReducer} from "../reducers/SearchVideosReducer";
 
 
 const reducers = combineReducers({
@@ -15,7 +16,9 @@ const reducers = combineReducers({
     selectedVideo : SelectedVideoReducer,
     channelDetails : channelDetailsReducer,
     Comments: CommentsReducer,
-    relatedVideos : relatedVideosReducer
+    relatedVideos : relatedVideosReducer,
+    searchVideos : SearchVideosReducer
+
 })
 
 const store = createStore(reducers,{},composeWithDevTools(applyMiddleware(thunk)))

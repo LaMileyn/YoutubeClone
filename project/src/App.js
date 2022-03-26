@@ -8,6 +8,7 @@ import HomesScreen from "@screens/HomeScreen";
 import Login from "@screens/Login";
 import {useSelector} from "react-redux";
 import VideoWatchScreen from "./Screens/VideoWatchScreen";
+import SearchScreen from "./Screens/SearchScreen";
 
 
 // NOT FOR THE DETAIL VIEW SCREEN
@@ -54,9 +55,9 @@ const App = () => {
                     <Login/>
                 }>
                 </Route>
-                <Route path="/search" element = {
+                <Route path="/search/:query" element = {
                     <Layout>
-                        <div><h1>Search results</h1></div>
+                        <SearchScreen />
                     </Layout>
                 }>
                 </Route>
